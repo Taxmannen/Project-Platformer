@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    [HideInInspector] public bool facingRight = true;
     public float speed;
     public float maxJumpHeight;
 
     Rigidbody2D rb;
-
-    bool facingRight = true;
     bool isJumping;
     float jumpMaxTime;
     float jumpTime;
