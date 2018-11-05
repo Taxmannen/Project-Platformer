@@ -34,3 +34,25 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Platformer/Assets/Animations.meta
+Platformer/Assets/Animations/Player.meta
+Platformer/Assets/Animations/Player/Player.controller
+Platformer/Assets/Animations/Player/Player.controller.meta
+Platformer/Assets/Animations/Player/PlayerIdle.anim
+Platformer/Assets/Animations/Player/PlayerIdle.anim.meta
+Platformer/Assets/Animations/Player/PlayerShoot.anim
+Platformer/Assets/Animations/Player/PlayerShoot.anim.meta
+Platformer/Assets/Scenes/Main.unity
+Platformer/Assets/Scripts/Player/PlayerShoot.cs
+Platformer/Assets/Scripts/Player/PlayerShoot.cs.meta
+Platformer/Assets/Sprites/Enemies.meta
+Platformer/Assets/Sprites/Enemies.meta~c59425b3304b311c9e7e9ec3d5e1efcf920ffde3
+Platformer/Assets/Sprites/Enemies/Bear_Spritesheet.png.meta
+Platformer/Assets/Sprites/Player/Snowman_3_Throwing.png.meta
+Platformer/Assets/Sprites/Player/Snowman_PS.psd.meta
+Platformer/Assets/Sprites/UI.meta
+Platformer/ProjectSettings/TagManager.asset
+Platformer/Assets/Animations.meta
+Platformer/Assets/Scenes/Main.unity
+Platformer/Assets/Sprites/Player/Snowman_3_Throwing.png.meta
+Platformer/ProjectSettings/TagManager.asset
