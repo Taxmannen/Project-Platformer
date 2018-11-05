@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody2D rb;
 
+    bool facingRight = true;
     bool isJumping;
     float jumpMaxTime;
     float jumpTime;
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour {
     {
         float x = Input.GetAxisRaw("Horizontal") * speed;
         rb.velocity = new Vector2(x, rb.velocity.y);
+
+        if      (x > 0 && !facingRight) facingRight = Flip(transform);
+        else if (x < 0 && facingRight)  facingRight = Flip(transform);
     }
 
     void Jump()
@@ -55,5 +59,15 @@ public class PlayerController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Ground") isJumping = false;
+    }
+
+    public static bool Flip(Transform transform)
+    {
+        bool facingRight = false;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        if (theScale.x > 0) facingRight = true;
+        transform.localScale = theScale;
+        return facingRight;
     }
 }
