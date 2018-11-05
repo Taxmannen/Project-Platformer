@@ -2,6 +2,7 @@
 
 public class PlayerController : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
+
     public float speed;
     public float maxJumpHeight;
 
