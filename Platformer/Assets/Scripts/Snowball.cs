@@ -30,9 +30,9 @@ public class Snowball : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && timer <= 1)
         {
-            Debug.Log((int)transform.localScale.x * 100);
+            //Give back health
         }
     }
 }
