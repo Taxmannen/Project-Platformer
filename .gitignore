@@ -56,3 +56,5 @@ Platformer/Assets/Animations.meta
 Platformer/Assets/Scenes/Main.unity
 Platformer/Assets/Sprites/Player/Snowman_3_Throwing.png.meta
 Platformer/ProjectSettings/TagManager.asset
+*.meta
+*.meta

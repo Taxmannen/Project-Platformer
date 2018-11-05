@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour {
+
+    public GameObject snowball;
+    public GameObject parent;
 
     Animator anim;
 
@@ -13,6 +14,10 @@ public class PlayerShoot : MonoBehaviour {
 	
 	void Update () 
 	{
-        if (Input.GetButtonDown("Fire1")) anim.Play("PlayerShoot"); 
+        if (Input.GetButtonDown("Fire1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerShoot"))
+        {
+            anim.Play("PlayerShoot");
+            Instantiate(snowball, transform.GetChild(0).position, snowball.transform.rotation, parent.transform);
+        }
 	}
 }
