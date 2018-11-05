@@ -13,11 +13,17 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         Move();
+        Jump();
     }
 
     void Move()
     {
         float x = Input.GetAxisRaw("Horizontal") * speed;
         rb.velocity = new Vector2(x, rb.velocity.y);
+    }
+
+    void Jump()
+    {
+
     }
 }
