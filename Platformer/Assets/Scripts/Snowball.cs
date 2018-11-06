@@ -5,6 +5,7 @@ public class Snowball : MonoBehaviour {
     PlayerController playerController;
     PlayerStats playerStats;
     Rigidbody2D rb;
+    AudioSource dyingBear;
 
     float scale = 1;
     float timer;
@@ -22,6 +23,8 @@ public class Snowball : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         if (playerController.facingRight) rb.AddForce(new Vector2(speed, 3),  ForceMode2D.Impulse);
         else                              rb.AddForce(new Vector2(-speed, 3), ForceMode2D.Impulse);
+
+        
     }
 
     private void Update()
@@ -33,6 +36,8 @@ public class Snowball : MonoBehaviour {
             transform.localScale = new Vector3(scale, scale, scale);
         }
         if (scale <= 0) Destroy(gameObject);
+
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -43,7 +48,16 @@ public class Snowball : MonoBehaviour {
             playerStats.AddHealth(healthAmout);
             Destroy(gameObject);
             taken = true;
+
+            
         }
+        if (other.gameObject.name == "Bear")
+        {
+            Destroy(other.gameObject);
+            dyingBear = GetComponent<AudioSource>();
+            dyingBear.Play(0);
+        }
+
     }
 
     void CalculateSpeed()
