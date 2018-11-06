@@ -8,6 +8,7 @@ public class Snowball : MonoBehaviour {
 
     float scale = 1;
     float timer;
+    float speed;
     bool taken;
 
 	void Start ()
@@ -17,9 +18,10 @@ public class Snowball : MonoBehaviour {
         playerStats      = player.GetComponent<PlayerStats>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
 
+        CalculateSpeed();
         rb = GetComponent<Rigidbody2D>();
-        if (playerController.facingRight) rb.AddForce(new Vector2(3, 3),  ForceMode2D.Impulse);
-        else                              rb.AddForce(new Vector2(-3, 3), ForceMode2D.Impulse);
+        if (playerController.facingRight) rb.AddForce(new Vector2(speed, 3),  ForceMode2D.Impulse);
+        else                              rb.AddForce(new Vector2(-speed, 3), ForceMode2D.Impulse);
     }
 
     private void Update()
@@ -42,5 +44,11 @@ public class Snowball : MonoBehaviour {
             Destroy(gameObject);
             taken = true;
         }
+    }
+
+    void CalculateSpeed()
+    {
+        float velocityX = player.GetComponent<Rigidbody2D>().velocity.x;
+        speed = Mathf.Abs(velocityX/3) + 3;
     }
 }
