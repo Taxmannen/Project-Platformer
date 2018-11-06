@@ -35,7 +35,7 @@ public class Snowball : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && timer >= 1 && !taken)
+        if (other.tag == "Player" && timer >= 0.5f && !taken)
         {
             int healthAmout = (int)(scale * 10);
             playerStats.AddHealth(healthAmout);
