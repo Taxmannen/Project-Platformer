@@ -5058,7 +5058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7055d3d60dd584e8d21c213b94fdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowball: {fileID: 1894045007745024, guid: 6e837da55437c73448b694a757be9017, type: 2}
+  snowball: {fileID: 1488568643788784, guid: 6e837da55437c73448b694a757be9017, type: 2}
   parent: {fileID: 1176562456}
 --- !u!1 &779013859
 GameObject:
@@ -6110,7 +6110,7 @@ SpriteRenderer:
   m_Size: {x: 0.01, y: 0.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2070011003
