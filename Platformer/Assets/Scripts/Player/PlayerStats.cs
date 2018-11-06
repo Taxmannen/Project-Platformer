@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
     public float fullHealth;
     public float currentHealth;
-
-    void Start () 
-	{
-		
-	}
-	
-	void Update () 
-	{
-		
-	}
+    
+    public void AddHealth(int amount)
+    {
+        if (amount + currentHealth <= fullHealth) currentHealth += amount;
+        else currentHealth = fullHealth;
+    }
 }

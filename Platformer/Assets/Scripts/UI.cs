@@ -4,13 +4,14 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
     public Slider healthSlider;
 
-    PlayerStats ps;
+    PlayerStats playerStats;
+    float speed = 3f;
 
     void Start()
     {
-        ps = GameObject.Find("Player").GetComponent<PlayerStats>();
-        healthSlider.maxValue = ps.fullHealth;
-        healthSlider.value = ps.fullHealth;
+        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        healthSlider.maxValue = playerStats.fullHealth;
+        healthSlider.value    = playerStats.fullHealth;
     }
 
     void Update()
@@ -20,22 +21,19 @@ public class UI : MonoBehaviour {
 
     private void SetSliderValues()
     {
-        healthSlider.maxValue = ps.fullHealth;
+        healthSlider.maxValue = playerStats.fullHealth;
+        float healthDiff = healthSlider.value - playerStats.currentHealth;
 
-        float speed = 3f;
-        float healthDiff = healthSlider.value - ps.currentHealth;
-
-        if (healthSlider.value > ps.currentHealth)
+        if (healthSlider.value > playerStats.currentHealth)
         {
             if (healthDiff < speed) speed = healthDiff;
             healthSlider.value -= speed;
         }
-        else if (healthSlider.value < ps.currentHealth)
+        else if (healthSlider.value < playerStats.currentHealth)
         {
             if (healthDiff > speed) speed = healthDiff;
             healthSlider.value += speed;
         }
-
-        //Debug.Log("Health: " + currentHealth + " " + "Slider Value "  + healthSlider.value);
+        //Debug.Log("Health: " + ps.currentHealth + " " + "Slider Value "  + healthSlider.value);
     }
 }
