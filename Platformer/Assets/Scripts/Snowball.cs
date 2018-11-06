@@ -49,6 +49,6 @@ public class Snowball : MonoBehaviour {
     void CalculateSpeed()
     {
         float velocityX = player.GetComponent<Rigidbody2D>().velocity.x;
-        speed = Mathf.Abs(velocityX/3) + 3;
+        speed = Mathf.Abs(velocityX/2) + 5;
     }
 }

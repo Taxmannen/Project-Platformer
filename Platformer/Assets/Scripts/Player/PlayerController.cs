@@ -2,7 +2,6 @@
 
 public class PlayerController : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
-
     public float speed;
     public float maxJumpHeight;
 
@@ -38,7 +37,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             isJumping = true;
-            jumpMaxTime = Time.time + 0.65f;
+            jumpMaxTime = Time.time + 0.5f;
             jumpTime = 0;
             jumpPower = 2.4f;
         }
@@ -47,9 +46,9 @@ public class PlayerController : MonoBehaviour {
         {
             jumpTime += Time.deltaTime;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            if (jumpTime < 0.45)
+            if (jumpTime < 0.4)
             {
-                if (jumpPower < maxJumpHeight) jumpPower *= 1.2f;
+                if (jumpPower < maxJumpHeight) jumpPower *= 1.5f;
             }
             else jumpPower *= 0.8f;
         }
@@ -61,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "Ground") isJumping = false;
     }
 
-    public static bool Flip(Transform transform)
+    bool Flip(Transform transform)
     {
         bool facingRight = false;
         Vector3 theScale = transform.localScale;

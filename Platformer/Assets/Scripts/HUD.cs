@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour {
+public class HUD : MonoBehaviour {
     public Slider healthSlider;
 
     PlayerStats playerStats;
