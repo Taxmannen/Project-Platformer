@@ -15,7 +15,7 @@ public class PlayerShoot : MonoBehaviour {
 	
 	void Update () 
 	{
-        if (Input.GetButtonDown("Fire1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerShoot") && playerStats.currentHealth > 11)
+        if (Input.GetButtonDown("Fire1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerShoot") && playerStats.currentHealth > 150)
         {
             anim.Play("PlayerShoot");
             Instantiate(snowball, transform.GetChild(0).position, snowball.transform.rotation, parent.transform);

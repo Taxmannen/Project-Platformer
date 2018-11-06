@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetButtonDown("Cancel")) transform.position = new Vector2(0, 0); //För debug
         Move();
         Jump();
-        if (Input.GetButtonDown("Cancel")) transform.position = new Vector2(0, 0); //För debug
     }
 
     void Move()
