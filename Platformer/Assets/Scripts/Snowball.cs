@@ -57,12 +57,13 @@ public class Snowball : MonoBehaviour {
             Instantiate(effect, transform.position, effect.transform.rotation, parent);
             taken = true;
         }
-        /*if (other.gameObject.name == "Bear")
+
+        else if (other.tag == "Ground")
         {
-            Destroy(other.gameObject);
-            dyingBear = GetComponent<AudioSource>();
-            dyingBear.Play(0);
-        }*/
+            Debug.Log(other.tag);
+            Transform currentEffect = Instantiate(effect, transform.position, effect.transform.rotation, parent).transform;
+            currentEffect.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
     }
 
     void CalculateSpeed()

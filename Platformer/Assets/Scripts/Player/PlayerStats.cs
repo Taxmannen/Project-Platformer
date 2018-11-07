@@ -4,7 +4,6 @@ public class PlayerStats : MonoBehaviour {
     public int fullHealth;
     public int currentHealth;
     
-    
     public void AddHealth(int amount)
     {
         if (amount + currentHealth <= fullHealth) currentHealth += amount;

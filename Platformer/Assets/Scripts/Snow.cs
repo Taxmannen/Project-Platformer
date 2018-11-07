@@ -2,6 +2,9 @@
 using UnityEngine;
 
 public class Snow : MonoBehaviour {
+    [Tooltip("The amount of health added on player collision")]
+    public int healthAmount;
+
     PlayerStats playerStats;
     ParticleSystem ps;
 
@@ -28,8 +31,7 @@ public class Snow : MonoBehaviour {
             {
                 ParticleSystem.Particle particle = enter[i];
                 enter[i] = particle;
-                playerStats.AddHealth(1);
-                //Debug.Log("ENTER");
+                playerStats.AddHealth(healthAmount);
             }
             ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
         }
