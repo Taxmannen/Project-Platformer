@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
 public class Snowball : MonoBehaviour {
+    public GameObject effect;
+    public int damage;
+
+    Transform parent;
     GameObject player;
     PlayerController playerController;
     PlayerStats playerStats;
     Rigidbody2D rb;
-    AudioSource dyingBear;
 
     float scale = 1;
     float timer;
@@ -15,6 +18,7 @@ public class Snowball : MonoBehaviour {
 	void Start ()
     {
         player = GameObject.Find("Player");
+        parent = GameObject.Find("Spawned Objects").transform;
         playerController = player.GetComponent<PlayerController>();
         playerStats      = player.GetComponent<PlayerStats>();
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
@@ -23,8 +27,6 @@ public class Snowball : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         if (playerController.facingRight) rb.AddForce(new Vector2(speed, 3),  ForceMode2D.Impulse);
         else                              rb.AddForce(new Vector2(-speed, 3), ForceMode2D.Impulse);
-
-        
     }
 
     private void Update()
@@ -36,8 +38,6 @@ public class Snowball : MonoBehaviour {
             transform.localScale = new Vector3(scale, scale, scale);
         }
         if (scale <= 0) Destroy(gameObject);
-
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -48,16 +48,21 @@ public class Snowball : MonoBehaviour {
             playerStats.AddHealth(healthAmout);
             Destroy(gameObject);
             taken = true;
-
-            
         }
-        if (other.gameObject.name == "Bear")
+        else if (other.tag == "Enemy" && !taken)
+        {
+            EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+            enemyStats.RemoveHealth(damage);
+            Destroy(gameObject);
+            Instantiate(effect, transform.position, effect.transform.rotation, parent);
+            taken = true;
+        }
+        /*if (other.gameObject.name == "Bear")
         {
             Destroy(other.gameObject);
             dyingBear = GetComponent<AudioSource>();
             dyingBear.Play(0);
-        }
-
+        }*/
     }
 
     void CalculateSpeed()
