@@ -24,9 +24,11 @@ public class EnemyManager : MonoBehaviour {
         SpriteRenderer sr = g.GetComponent<SpriteRenderer>();
         Animator anim     = g.GetComponent<Animator>();
         EnemyStats es     = g.GetComponent<EnemyStats>();
+        EnemyMovement em  = g.GetComponent<EnemyMovement>();
 
-        sr.enabled   = !sr.enabled;
-        anim.enabled = !anim.enabled;
-        es.enabled   = !es.enabled;
+        if (sr != null)   sr.enabled   = !sr.enabled;
+        if (anim != null) anim.enabled = !anim.enabled;
+        if (es != null)   es.enabled   = !es.enabled;
+        if (em != null)   em.enabled   = !em.enabled;
     }
 }

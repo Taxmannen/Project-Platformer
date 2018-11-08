@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
-
-
     private float latestDirectionChangeTime;
     private float characterVelocity = 1f;
     private Vector2 movementDirection;
@@ -14,21 +11,11 @@ public class EnemyMovement : MonoBehaviour
 
     public bool hitByPlayer;
 
-    Rigidbody2D rb;
-
     bool facingRight;
-
-    private GameObject player;
-
-    void Awake()
-    {
-        player = GameObject.Find("Player");
-    }
 
     void Start()
     {
         movementDirection = new Vector2(-1, 0).normalized;
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -59,11 +46,6 @@ public class EnemyMovement : MonoBehaviour
         {
             movementDirection.x *= -1;
         }
-
-
     }
-
-
-
 }
 

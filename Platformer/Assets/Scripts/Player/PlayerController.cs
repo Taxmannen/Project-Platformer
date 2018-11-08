@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     float jumpMaxTime;
     float jumpTime;
     float jumpPower;
+    float sprint;
 
     void Start()
     {
@@ -27,7 +28,11 @@ public class PlayerController : MonoBehaviour {
 
     void Move()
     {
-        float x = Input.GetAxisRaw("Horizontal") * speed;
+ 
+        if (Input.GetButton("Sprint") && sprint <= 5) sprint += 0.2f;
+        else                                          sprint = 0;
+
+        float x = Input.GetAxisRaw("Horizontal") * (speed + sprint);
         rb.velocity = new Vector2(x, rb.velocity.y);
 
         if (x != 0 && !audioSource.isPlaying) audioSource.Play();
