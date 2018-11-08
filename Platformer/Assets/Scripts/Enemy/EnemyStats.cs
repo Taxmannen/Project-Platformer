@@ -19,9 +19,13 @@ public class EnemyStats : MonoBehaviour {
 
     void OnDestroy()
     {
-        AudioSource audioSource= Instantiate(soundObject, transform.position, transform.rotation, GameObject.Find("Spawned Objects").transform).GetComponent<AudioSource>();
-        audioSource.clip = deathSound;
-        audioSource.Play();
+        GameObject current = Instantiate(soundObject, transform.position, transform.rotation, GameObject.Find("Spawned Objects").transform);
+        AudioSource audioSource = current.GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+        }
     }
 
     public void RemoveHealth(int amount)
