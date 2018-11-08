@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour { 
     public int fullHealth;
     public int currentHealth;
-    
+
+    PlayerController pc;
+
+    private void Start()
+    {
+        pc = GetComponent<PlayerController>();
+    }
+
     public void AddHealth(int amount)
     {
         if (amount + currentHealth <= fullHealth) currentHealth += amount;
@@ -18,9 +26,18 @@ public class PlayerStats : MonoBehaviour {
 
     void Update()
     {
-        PlayerController pc = GetComponent<PlayerController>();
         float scale = (float)currentHealth/fullHealth;
-        if (pc.facingRight) transform.localScale = new Vector3(scale, scale, scale);
-        else                transform.localScale = new Vector3(-scale, scale, scale);
+        if (scale > 0.05f)
+        {
+            if (pc.facingRight) transform.localScale = new Vector3(scale, scale, scale);
+            else                transform.localScale = new Vector3(-scale, scale, scale);
+        }   
+
+        if (currentHealth <= 0) SceneManager.LoadScene("Main");
+    }
+
+    void OnDestroy()
+    {
+        //TODO
     }
 }

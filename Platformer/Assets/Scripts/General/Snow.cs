@@ -5,21 +5,24 @@ public class Snow : MonoBehaviour {
     [Tooltip("The amount of health added on player collision")]
     public int healthAmount;
 
+    Transform player;
     PlayerStats playerStats;
     ParticleSystem ps;
 
     void Start()
     {
-        playerStats = transform.parent.GetComponent<PlayerStats>();
+        player = GameObject.Find("Player").transform;
+
+        playerStats = player.GetComponent<PlayerStats>();
         ps = GetComponent<ParticleSystem>();
     }
 
     void Update ()
     {
-        transform.position = new Vector3(transform.position.x, 12.5f, transform.position.z);	
+        transform.position = new Vector3(player.position.x, 12.5f, 0);	
 	}
 
-    void OnParticleTrigger()
+    void OnParticleTrigger()    
     {
         if (ps != null)
         {

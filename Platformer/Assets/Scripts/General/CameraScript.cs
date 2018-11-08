@@ -6,6 +6,6 @@ public class CameraScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(target.position.x, cameraY, transform.position.z);
+        if (target != null) transform.position = new Vector3(target.position.x, cameraY, transform.position.z);
     }
 }

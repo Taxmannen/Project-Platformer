@@ -60,7 +60,7 @@ public class Snowball : MonoBehaviour {
 
         else if (other.tag == "Ground")
         {
-            Transform currentEffect = Instantiate(effect, transform.position, effect.transform.rotation, parent).transform;
+            Transform currentEffect = Instantiate(effect, new Vector3(transform.position.x, transform.position.y - 0.05f, 0), effect.transform.rotation, parent).transform;
             currentEffect.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
