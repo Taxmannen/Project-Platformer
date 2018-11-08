@@ -4956,7 +4956,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 305227549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.13, y: -3.08, z: 0}
+  m_LocalPosition: {x: -13, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 672928322}
@@ -16479,7 +16479,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871224076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.249999, y: -0.45, z: 0}
+  m_LocalPosition: {x: -11.249999, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 305227552}
@@ -17475,7 +17475,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1546967311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.109999, y: -0.96, z: 0}
+  m_LocalPosition: {x: -19, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 305227552}
@@ -17561,7 +17561,7 @@ GameObject:
   - component: {fileID: 1792242295}
   - component: {fileID: 1792242294}
   - component: {fileID: 1792242293}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blocks
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -5,11 +5,13 @@ public class EnemyStats : MonoBehaviour {
     public AudioClip deathSound;
     public int maxHealth;
 
+    Transform parent;
     int currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;    
+        parent = GameObject.Find("Spawned Objects").transform;
+        currentHealth = maxHealth;
     }
 
     void Update ()
@@ -19,7 +21,7 @@ public class EnemyStats : MonoBehaviour {
 
     void OnDestroy()
     {
-        GameObject current = Instantiate(soundObject, transform.position, transform.rotation, GameObject.Find("Spawned Objects").transform);
+        GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
         AudioSource audioSource = current.GetComponent<AudioSource>();
         if (audioSource != null)
         {
