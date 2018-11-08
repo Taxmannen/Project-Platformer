@@ -3,12 +3,15 @@
 public class HeathArea : MonoBehaviour {
     public float damageRate;
 
+    ParticleSystem meltParticle;
     PlayerStats playerStats;
     float meltTimer;
 
     void Start()
     {
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        meltParticle = playerStats.GetComponentInChildren<ParticleSystem>();
+        meltParticle.Stop();
         meltTimer = damageRate;
     }
 
@@ -19,7 +22,7 @@ public class HeathArea : MonoBehaviour {
         {
             playerStats.RemoveHealth(1);
             meltTimer = damageRate;
-            //Start Particle
+            meltParticle.Play();
         }
     }
 
@@ -27,7 +30,7 @@ public class HeathArea : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            //Stop Particle 
+            meltParticle.Stop();
         }
     }
 }

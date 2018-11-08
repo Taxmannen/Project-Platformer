@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
+    public GameObject soundObject;
+    public AudioClip deathSound;
     public int maxHealth;
 
     int currentHealth;
@@ -17,7 +19,9 @@ public class EnemyStats : MonoBehaviour {
 
     void OnDestroy()
     {
-        //Do stuff   
+        AudioSource audioSource= Instantiate(soundObject, transform.position, transform.rotation, GameObject.Find("Spawned Objects").transform).GetComponent<AudioSource>();
+        audioSource.clip = deathSound;
+        audioSource.Play();
     }
 
     public void RemoveHealth(int amount)

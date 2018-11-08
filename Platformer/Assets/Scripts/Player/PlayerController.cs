@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     public float maxJumpHeight;
 
     Rigidbody2D rb;
+    AudioSource audioSource;
     bool isJumping;
     float jumpMaxTime;
     float jumpTime;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour {
     {
         float x = Input.GetAxisRaw("Horizontal") * speed;
         rb.velocity = new Vector2(x, rb.velocity.y);
+
+        if (x != 0 && !audioSource.isPlaying) audioSource.Play();
 
         if      (x > 0 && !facingRight) facingRight = Flip(transform);
         else if (x < 0 && facingRight)  facingRight = Flip(transform);
