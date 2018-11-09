@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour {
     private void Start()
     {
         pc = GetComponent<PlayerController>();
+
     }
 
     public void AddHealth(int amount)
