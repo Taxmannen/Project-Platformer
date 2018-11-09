@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour {
     float jumpMaxTime;
     float jumpTime;
     float jumpPower;
+
+
+    public float testjumpMaxTime = 0.5f;
+    public float testjumpTime = 0;
+    public float testjumpPower = 2.4f;
     float sprint;
 
     void Start()
@@ -48,9 +53,9 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             isJumping = true;
-            jumpMaxTime = Time.time + 0.5f;
-            jumpTime = 0;
-            jumpPower = 2.4f;
+            jumpMaxTime = Time.time + testjumpMaxTime;
+            jumpTime = testjumpTime;
+            jumpPower = testjumpPower;
         }
 
         if (Input.GetButton("Jump") && Time.time < jumpMaxTime && isJumping)
