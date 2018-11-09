@@ -22,13 +22,16 @@ public class EnemyStats : MonoBehaviour {
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
-            GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
-            AudioSource audioSource = current.GetComponent<AudioSource>();
-            if (audioSource != null)
+            if (soundObject != null)
             {
-                audioSource.clip = deathSound;
-                audioSource.volume = volume;
-                audioSource.Play();
+                GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
+                AudioSource audioSource = current.GetComponent<AudioSource>();
+                if (audioSource != null)
+                {
+                    audioSource.clip = deathSound;
+                    audioSource.volume = volume;
+                    audioSource.Play();
+                }
             }
         }
 	}
