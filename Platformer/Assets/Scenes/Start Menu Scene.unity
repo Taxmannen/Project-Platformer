@@ -1716,6 +1716,7 @@ GameObject:
   - component: {fileID: 479966258}
   - component: {fileID: 479966255}
   - component: {fileID: 479966257}
+  - component: {fileID: 479966259}
   m_Layer: 5
   m_Name: Slider SoundFX Volume
   m_TagString: Untagged
@@ -1801,6 +1802,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 479966259}
+        m_MethodName: SetSoundFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &479966256
@@ -1858,6 +1870,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 479966255}
   toggle: {fileID: 1021767249}
+--- !u!114 &479966259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479966253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e935783155a7f0d469feb0a89349bd5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506009128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3362,6 +3385,7 @@ GameObject:
   - component: {fileID: 984709361}
   - component: {fileID: 984709358}
   - component: {fileID: 984709360}
+  - component: {fileID: 984709362}
   m_Layer: 5
   m_Name: Slider Music Volume
   m_TagString: Untagged
@@ -3447,6 +3471,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 984709362}
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &984709359
@@ -3504,6 +3539,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 984709358}
   toggle: {fileID: 2103077678}
+--- !u!114 &984709362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984709356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb90b56edb71244fa24ec497774d7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985348005
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,7 +4135,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This game was created by Group One. Group One consists of Daniel, Jonathan,
-    Mikael and Kristoffer.
+    Michael and Kristoffer.
 --- !u!222 &1172079312
 CanvasRenderer:
   m_ObjectHideFlags: 0
