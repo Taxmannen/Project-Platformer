@@ -19,7 +19,7 @@ public class ScrollingBackground : MonoBehaviour {
 
     void Update()
     {
-        if (player.transform.position.x.ToString("F2") != oldX.ToString("F2"))
+        if (player.transform.position.x.ToString("F1") != oldX.ToString("F1"))
         {
             if (Input.GetAxisRaw("Horizontal") > 0) offset += (scrollSpeed / 100);
             if (Input.GetAxisRaw("Horizontal") < 0) offset -= (scrollSpeed / 100);
