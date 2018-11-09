@@ -9,6 +9,7 @@ public class MenuSliderMute : MonoBehaviour {
     public Slider slider;
     float previousSliderValue;
 
+
     public void OnValueChanged(bool newState)
     {
         if (newState == true)
