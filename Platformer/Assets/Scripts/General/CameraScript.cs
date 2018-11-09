@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class CameraScript : MonoBehaviour {
     public Transform target;
     public float cameraY = 3.5f;
