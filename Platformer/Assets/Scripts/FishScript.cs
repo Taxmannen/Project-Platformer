@@ -19,6 +19,6 @@ public class FishScript : MonoBehaviour {
         movementPerSecond = movementDirection * speed;
         transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime), transform.position.y);
 
-        Object.Destroy(gameObject, 20.0f);
+        Object.Destroy(gameObject, 50.0f);
     }
 }

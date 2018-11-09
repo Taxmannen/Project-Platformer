@@ -2,31 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElevatorScript : MonoBehaviour {
+public class ElevatorScript : MonoBehaviour
+{
 
-    public Transform downPos;
-    public Transform upPos;
+    public Transform startPos;
+    public Transform endPos;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+    public Transform player;
 
-    void Start () {
-        movementDirection = new Vector2(0, 0.5f).normalized;
-    }
-	
-	// Update is called once per frame
-	void Update () {
+    bool playerInside = false;
 
-        movementPerSecond = movementDirection * 1;
+    public float speed;
 
-        transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
-        transform.position.y + (movementPerSecond.y * Time.deltaTime));
 
-        if(transform.position.y >= upPos.position.y)
-            movementDirection.y *= -1;
-        if (transform.position.y <= downPos.position.y)
-            movementDirection.y *= -1;
+    void Start()
+    {
+        movementDirection = new Vector2(0.1f, 0).normalized;
     }
 
+    // Update is called once per frame
+    void Update()
+    {
 
-    
+        if (playerInside)
+        {
+            if (player.GetComponent<PlayerController>().facingRight == true && transform.position.x <= endPos.position.x)
+                transform.Translate(movementDirection * Time.deltaTime * speed);
+
+            else if (player.GetComponent<PlayerController>().facingRight != true && transform.position.x >= startPos.position.x)
+                transform.Translate(movementDirection *-1 * Time.deltaTime * speed);
+        }
+
+        
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag == "Player")
+        player.transform.parent = transform;
+        //if(col.tag == "Player")
+        playerInside = true;
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+       playerInside = false;
+    }
 }
+

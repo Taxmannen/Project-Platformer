@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private float latestDirectionChangeTime;
-    private float characterVelocity = 1f;
+    public float characterVelocity = 1f;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
 

@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Enemy
   - Inside
+  - Water
+  - Foreground
+  - EdgeCollider
   layers:
   - Default
   - TransparentFX
@@ -19,8 +22,8 @@ TagManager:
   - Background
   - Player
   - Ground
-  - 
-  - 
+  - EnemyLayer
+  - EnemyCollisionLayer
   - 
   - 
   - 
