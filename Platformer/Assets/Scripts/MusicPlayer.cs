@@ -14,7 +14,7 @@ public class MusicPlayer : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && other.isTrigger)
+        if (other.tag == "Player" && other.isTrigger && audioSource.clip != bossMusic)
         {
             audioSource.volume = bossMusicVolume;
             audioSource.clip = bossMusic;
