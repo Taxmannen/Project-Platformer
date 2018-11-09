@@ -933,7 +933,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 1275739931}
   OnCanvas: {fileID: 27128608}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 765537971}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &267669043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +1713,9 @@ GameObject:
   m_Component:
   - component: {fileID: 479966254}
   - component: {fileID: 479966256}
+  - component: {fileID: 479966258}
   - component: {fileID: 479966255}
+  - component: {fileID: 479966257}
   m_Layer: 5
   m_Name: Slider SoundFX Volume
   m_TagString: Untagged
@@ -1810,6 +1814,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5201af45d2154c43964ba609ce45d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggle: {fileID: 1021767249}
+--- !u!114 &479966257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479966253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 479966258}
+          m_MethodName: OnClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &479966258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479966253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47731c658b056714b914504e1cff0340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 479966255}
   toggle: {fileID: 1021767249}
 --- !u!1 &506009128
 GameObject:
@@ -1944,7 +1991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 1275739931}
   OnCanvas: {fileID: 916023175}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 2089487352}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &524318099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +2035,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126593ef6e8a6f742963eed6058ff1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mounts: []
+  mounts:
+  - {fileID: 227259597}
+  - {fileID: 580075787}
+  - {fileID: 322023742}
+  - {fileID: 1641188836}
+  - {fileID: 1416506213}
   transitionSpeed: 3
 --- !u!1 &564896708
 GameObject:
@@ -2142,7 +2196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 403948392}
   OnCanvas: {fileID: 1275739931}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 1770922031}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &580075786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2571,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 27128608}
   OnCanvas: {fileID: 1275739931}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 261025005}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &769171598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3359,9 @@ GameObject:
   m_Component:
   - component: {fileID: 984709357}
   - component: {fileID: 984709359}
+  - component: {fileID: 984709361}
   - component: {fileID: 984709358}
+  - component: {fileID: 984709360}
   m_Layer: 5
   m_Name: Slider Music Volume
   m_TagString: Untagged
@@ -3400,6 +3460,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5201af45d2154c43964ba609ce45d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggle: {fileID: 2103077678}
+--- !u!114 &984709360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984709356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 984709361}
+          m_MethodName: OnClicked
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &984709361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984709356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47731c658b056714b914504e1cff0340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 984709358}
   toggle: {fileID: 2103077678}
 --- !u!1 &985348005
 GameObject:
@@ -3506,7 +3609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5523,7 +5626,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 1275739931}
   OnCanvas: {fileID: 1402199457}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 1955858273}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &1620890728
 GameObject:
   m_ObjectHideFlags: 0
@@ -6125,7 +6230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 1275739931}
   OnCanvas: {fileID: 403948392}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 564896708}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &1771239925
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,7 +7080,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 1402199457}
   OnCanvas: {fileID: 1275739931}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 1588970633}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &1980667257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7269,7 +7378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OffCanvas: {fileID: 916023175}
   OnCanvas: {fileID: 1275739931}
+  MainMenuCanvas: {fileID: 1275739931}
   firstSelected: {fileID: 506009128}
+  StartMenuCameraMount: {fileID: 227259597}
 --- !u!1 &2091001905
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
