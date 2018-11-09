@@ -14,6 +14,7 @@ public class MenuSliderMute : MonoBehaviour {
         if (newState == true)
         {
             previousSliderValue = slider.value;
+            if (previousSliderValue <= 0) previousSliderValue = 0.05f;
             slider.value = 0;
         }
         else slider.value = previousSliderValue;
