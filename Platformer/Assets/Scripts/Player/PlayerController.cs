@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
     public float speed;
     public float maxJumpHeight;
+    public float x;
 
     Rigidbody2D rb;
     AudioSource audioSource;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel")) transform.position = new Vector2(0, 0); //För debug
+        if (Input.GetButtonDown("Cancel")) SceneManager.LoadScene("Main");
         Move();
         Jump();
     }
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButton("Sprint") && sprint <= 5) sprint += 0.2f;
         else                                          sprint = 0;
 
-        float x = Input.GetAxisRaw("Horizontal") * (speed + sprint);
+        x = Input.GetAxisRaw("Horizontal") * (speed + sprint);
         rb.velocity = new Vector2(x, rb.velocity.y);
 
         if (x != 0 && !audioSource.isPlaying) audioSource.Play();

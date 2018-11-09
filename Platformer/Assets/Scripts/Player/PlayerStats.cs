@@ -36,9 +36,4 @@ public class PlayerStats : MonoBehaviour {
         if (currentHealth <= 0) SceneManager.LoadScene("Main");
         //if (currentHealth <= 0) SceneManager.LoadScene("Start Menu Scene");
     }
-
-    void OnDestroy()
-    {
-        //TODO
-    }
 }

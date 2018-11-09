@@ -16,19 +16,18 @@ public class EnemyStats : MonoBehaviour {
 
     void Update ()
     {
-        if (currentHealth <= 0) Destroy(gameObject);
-	}
-
-    void OnDestroy()
-    {
-        GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
-        AudioSource audioSource = current.GetComponent<AudioSource>();
-        if (audioSource != null)
+        if (currentHealth <= 0)
         {
-            audioSource.clip = deathSound;
-            audioSource.Play();
+            Destroy(gameObject);
+            GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
+            AudioSource audioSource = current.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.clip = deathSound;
+                audioSource.Play();
+            }
         }
-    }
+	}
 
     public void RemoveHealth(int amount)
     {
