@@ -3,6 +3,8 @@
 public class EnemyStats : MonoBehaviour {
     public GameObject soundObject;
     public AudioClip deathSound;
+    [Range(0.05f, 1f)]
+    public float volume;
     public int maxHealth;
 
     Transform parent;
@@ -24,6 +26,7 @@ public class EnemyStats : MonoBehaviour {
             if (audioSource != null)
             {
                 audioSource.clip = deathSound;
+                audioSource.volume = volume;
                 audioSource.Play();
             }
         }

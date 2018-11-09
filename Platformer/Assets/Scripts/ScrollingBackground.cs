@@ -18,6 +18,7 @@ public class ScrollingBackground : MonoBehaviour {
     {
         if (Input.GetAxisRaw("Horizontal") > 0) offset += (scrollSpeed/100);
         if (Input.GetAxisRaw("Horizontal") < 0) offset -= (scrollSpeed/100);
+
         rend.material.mainTextureOffset = new Vector2(offset, 0);
         transform.position = new Vector3(cam.position.x, transform.position.y, 0);
     }
