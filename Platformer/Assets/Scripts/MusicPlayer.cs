@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
     public AudioClip stageMusic;
-    [Range(0.2f, 0.5f)]
+    [Range(0.1f, 1f)]
     public float stageMusicVolume;
     public AudioClip bossMusic;
     [Range(0.1f, 1f)]

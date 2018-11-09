@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour {
     void Update()
     {
         float scale = (float)currentHealth/fullHealth;
-        if (scale > 0.05f)
+        if (scale > 0.1f)
         {
             if (pc.facingRight) transform.localScale = new Vector3(scale, scale, scale);
             else                transform.localScale = new Vector3(-scale, scale, scale);

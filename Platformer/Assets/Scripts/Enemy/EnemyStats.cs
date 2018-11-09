@@ -14,6 +14,7 @@ public class EnemyStats : MonoBehaviour {
     {
         parent = GameObject.Find("Spawned Objects").transform;
         currentHealth = maxHealth;
+        if (transform.parent == null || transform.parent.name != "Enemies") transform.SetParent(GameObject.Find("Enemies").transform);
     }
 
     void Update ()
