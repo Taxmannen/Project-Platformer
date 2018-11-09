@@ -6,20 +6,27 @@ public class ScrollingBackground : MonoBehaviour {
 
     Renderer rend;
     Transform cam;
+    Transform player;
     float offset;
+    float oldX;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         cam = GameObject.Find("Main Camera").transform;
+        player = GameObject.Find("Player").transform;
     }
 
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0) offset += (scrollSpeed/100);
-        if (Input.GetAxisRaw("Horizontal") < 0) offset -= (scrollSpeed/100);
+        if (player.transform.position.x.ToString("F2") != oldX.ToString("F2"))
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0) offset += (scrollSpeed / 100);
+            if (Input.GetAxisRaw("Horizontal") < 0) offset -= (scrollSpeed / 100);
 
-        rend.material.mainTextureOffset = new Vector2(offset, 0);
-        transform.position = new Vector3(cam.position.x, transform.position.y, 0);
+            rend.material.mainTextureOffset = new Vector2(offset, 0);
+            transform.position = new Vector3(cam.position.x, transform.position.y, 0);
+            oldX = player.transform.position.x;
+        }
     }
 }
