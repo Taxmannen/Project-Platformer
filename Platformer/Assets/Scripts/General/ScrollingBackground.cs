@@ -17,7 +17,7 @@ public class ScrollingBackground : MonoBehaviour {
         player = GameObject.Find("Player").transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (player.transform.position.x.ToString("F1") != oldX.ToString("F1"))
         {
@@ -25,8 +25,8 @@ public class ScrollingBackground : MonoBehaviour {
             if (Input.GetAxisRaw("Horizontal") < 0) offset -= (scrollSpeed / 100);
 
             rend.material.mainTextureOffset = new Vector2(offset, 0);
-            transform.position = new Vector3(cam.position.x, transform.position.y, 0);
             oldX = player.transform.position.x;
         }
+        transform.position = new Vector3(cam.position.x, transform.position.y, 0);
     }
 }
