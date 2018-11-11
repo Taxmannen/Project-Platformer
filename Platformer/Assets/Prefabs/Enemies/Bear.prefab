@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d146dbb19dacb468a195eba221528d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundObject: {fileID: 1777177489140574, guid: 5ec385a1f2503cf46ba77dfcb4c17d6e,
+  deathEffect: {fileID: 1241331933225606, guid: 4ecb285aac9314c40b9bf485f4cb91c0,
     type: 2}
   deathSound: {fileID: 8300000, guid: f986025123b630d45b0566f60cb73251, type: 3}
   volume: 0.18

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyStats : MonoBehaviour {
-    public GameObject soundObject;
+    public GameObject deathEffect;
     public AudioClip deathSound;
     [Range(0.05f, 1f)]
     public float volume;
@@ -13,19 +14,24 @@ public class EnemyStats : MonoBehaviour {
     void Start()
     {
         parent = GameObject.Find("Spawned Objects").transform;
-        currentHealth = maxHealth;
         if (transform.parent == null || transform.parent.name != "Enemies") transform.SetParent(GameObject.Find("Enemies").transform);
+        currentHealth = maxHealth;
     }
 
-    void Update ()
+    public void RemoveHealth(int amount)
     {
+        currentHealth -= amount;
+        if (currentHealth < 0) currentHealth = 0;
+
         if (currentHealth <= 0)
         {
+            if (gameObject.name.Contains("Santa")) SceneManager.LoadScene("Victory Scene");
             Destroy(gameObject);
-            if (soundObject != null)
+            if (deathEffect != null)
             {
-                GameObject current = Instantiate(soundObject, transform.position, transform.rotation, parent);
-                AudioSource audioSource = current.GetComponent<AudioSource>();
+                GameObject current = Instantiate(deathEffect, transform.position, deathEffect.transform.rotation, parent);
+
+                AudioSource audioSource = current.AddComponent<AudioSource>();
                 if (audioSource != null)
                 {
                     audioSource.clip = deathSound;
@@ -34,11 +40,5 @@ public class EnemyStats : MonoBehaviour {
                 }
             }
         }
-	}
-
-    public void RemoveHealth(int amount)
-    {
-        currentHealth -= amount;
-        if (currentHealth < 0) currentHealth = 0;
     }
 }

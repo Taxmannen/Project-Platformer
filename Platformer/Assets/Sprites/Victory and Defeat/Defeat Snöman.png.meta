@@ -91,10 +91,10 @@ TextureImporter:
       name: "Defeat Sn\xF6man_0"
       rect:
         serializedVersion: 2
-        x: 74
-        y: 490
-        width: 354
-        height: 122
+        x: 0
+        y: 465
+        width: 500
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b191d44b639e4b944b9e7fa5512b04f4
+      spriteID: cfde2fafb917f304c8bfbc3afb204023
       vertices: []
       indices: 
       edges: []
@@ -111,10 +111,10 @@ TextureImporter:
       name: "Defeat Sn\xF6man_1"
       rect:
         serializedVersion: 2
-        x: 73
-        y: 335
-        width: 354
-        height: 122
+        x: 0
+        y: 310
+        width: 500
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,7 +122,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c16b0250933d3754992b238c3836bec5
+      spriteID: 74fba401721d55d449359c9248839500
       vertices: []
       indices: 
       edges: []
@@ -131,10 +131,10 @@ TextureImporter:
       name: "Defeat Sn\xF6man_2"
       rect:
         serializedVersion: 2
-        x: 73
-        y: 180
-        width: 354
-        height: 122
+        x: 0
+        y: 155
+        width: 500
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af949b9179466494ebc26ce63c26f64b
+      spriteID: f546a9cfa31c12b4f8efd0b366295c55
       vertices: []
       indices: 
       edges: []
@@ -151,10 +151,10 @@ TextureImporter:
       name: "Defeat Sn\xF6man_3"
       rect:
         serializedVersion: 2
-        x: 73
-        y: 25
-        width: 354
-        height: 122
+        x: 0
+        y: 0
+        width: 500
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2875a05dce737b540b446a546c1812bb
+      spriteID: 47bb424d344fd264184a8d8b4ad71854
       vertices: []
       indices: 
       edges: []

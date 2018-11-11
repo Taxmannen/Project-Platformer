@@ -49,6 +49,7 @@ public class Snowball : MonoBehaviour {
             Destroy(gameObject);
             taken = true;
         }
+
         else if (other.tag == "Enemy" && !taken)
         {
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();

@@ -7,10 +7,9 @@ public class PlayerStats : MonoBehaviour {
 
     PlayerController pc;
 
-    private void Start()
+    void Start()
     {
         pc = GetComponent<PlayerController>();
-
     }
 
     public void AddHealth(int amount)
@@ -23,6 +22,7 @@ public class PlayerStats : MonoBehaviour {
     {
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
+        if (currentHealth <= 0) SceneManager.LoadScene("Failure Scene");
     }
 
     void Update()
@@ -33,8 +33,5 @@ public class PlayerStats : MonoBehaviour {
             if (pc.facingRight) transform.localScale = new Vector3(scale, scale, scale);
             else                transform.localScale = new Vector3(-scale, scale, scale);
         }   
-
-        if (currentHealth <= 0) SceneManager.LoadScene("Main");
-        //if (currentHealth <= 0) SceneManager.LoadScene("Start Menu Scene");
     }
 }

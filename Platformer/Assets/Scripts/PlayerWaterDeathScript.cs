@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerWaterDeathScript : MonoBehaviour {
+    public Transform player;
 
     bool playerInside = false;
-    public Transform player;
 	
-	void Update () {
+	void Update ()
+    {
         if (playerInside)
         {
             PlayerStats playerStats = player.GetComponent<PlayerStats>();
