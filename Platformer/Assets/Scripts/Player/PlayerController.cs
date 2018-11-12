@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D rb;
     AudioSource audioSource;
     bool isJumping;
-    float x;
+    float x;    
     float jumpMaxTime;
     float jumpTime;
     float jumpPower;

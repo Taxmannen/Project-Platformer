@@ -38,7 +38,6 @@ public class SantaAIScript : MonoBehaviour
         {
             rb.gravityScale = -50;
             jump();
-            Debug.Log("jumped");
             timer = jumpRate;
         }
         else

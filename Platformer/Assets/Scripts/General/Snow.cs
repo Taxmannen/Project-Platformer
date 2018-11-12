@@ -9,6 +9,8 @@ public class Snow : MonoBehaviour {
     PlayerStats playerStats;
     ParticleSystem ps;
 
+    float timer;
+
     void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -19,12 +21,13 @@ public class Snow : MonoBehaviour {
 
     void Update ()
     {
-        transform.position = new Vector3(player.position.x, 12.5f, 0);	
+        transform.position = new Vector3(player.position.x, 12.5f, 0);
+        timer -= Time.deltaTime;
 	}
 
     void OnParticleTrigger()    
     {
-        if (ps != null)
+        if (ps != null && timer <= 0)
         {
             List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
 
@@ -35,6 +38,7 @@ public class Snow : MonoBehaviour {
                 ParticleSystem.Particle particle = enter[i];
                 enter[i] = particle;
                 playerStats.AddHealth(healthAmount);
+                timer = 0.25f;
             }
             ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
         }
