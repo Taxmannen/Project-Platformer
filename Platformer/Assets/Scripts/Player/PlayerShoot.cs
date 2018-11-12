@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour {
         {
             anim.Play("PlayerShoot");
             Instantiate(snowball, transform.GetChild(0).position, snowball.transform.rotation, parent.transform);
-            playerStats.RemoveHealth(10);
+            playerStats.RemoveHealth(15);
         }
 	}
 }

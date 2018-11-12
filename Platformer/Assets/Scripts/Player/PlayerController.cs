@@ -5,11 +5,11 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector] public bool facingRight = true;
     public float speed;
     public float maxJumpHeight;
-    public float x;
 
     Rigidbody2D rb;
     AudioSource audioSource;
     bool isJumping;
+    float x;
     float jumpMaxTime;
     float jumpTime;
     float jumpPower;
