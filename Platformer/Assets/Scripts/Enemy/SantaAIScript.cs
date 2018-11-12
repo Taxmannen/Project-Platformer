@@ -8,15 +8,50 @@ public class SantaAIScript : MonoBehaviour
     public GameObject weapon;
     private Vector2 movementDirection;
 
+    public float jumpRate = 2f;
+    float timer;
+    public float jumpHeight = 100;
+
+    Rigidbody2D rb;
+
     void Start()
     {
-        weapon.SetActive(false);        
+        weapon.SetActive(false);
+        rb = GetComponent<Rigidbody2D>();
+        timer = jumpRate;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance < 10f) weapon.SetActive(true);
-        else                weapon.SetActive(false);
+        if (distance < 10f)
+        {
+            weapon.SetActive(true);
+            //rb.AddForce(Vector3.left * 5);
+        }
+        else weapon.SetActive(false);
+
+
+
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            rb.gravityScale = -50;
+            jump();
+            Debug.Log("jumped");
+            timer = jumpRate;
+        }
+        else
+        {
+            rb.gravityScale = 1;
+        }
+
+    }
+
+
+
+    void jump()
+    {
+        rb.AddForce(transform.up * jumpHeight);
     }
 }
