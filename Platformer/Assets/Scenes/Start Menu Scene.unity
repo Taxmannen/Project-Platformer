@@ -3413,7 +3413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb90b56edb71244fa24ec497774d7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicPlayer: {fileID: 855775531}
 --- !u!1 &985348005
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,7 +4034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -489, y: 469}
+  m_AnchoredPosition: {x: -489, y: 386}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172079311
@@ -4070,8 +4069,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This game was created by Group One. Group One consists of Daniel, Jonathan,
-    Michael and Kristoffer.
+  m_Text: 'Santa is polluting the environment with his factories, utilizing coal energy
+    and chopping down the forest. As a snowman, you cannot accept this. The higher
+    temperature is making you thaw, and you need to put an end to Santa''s business
+    model before it''s too late!
+
+
+    "Serving it Cold" was created by Group One, which consists of Daniel, Jonathan,
+    Michael and Kristoffer.'
 --- !u!222 &1172079312
 CanvasRenderer:
   m_ObjectHideFlags: 0
