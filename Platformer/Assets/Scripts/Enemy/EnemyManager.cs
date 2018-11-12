@@ -27,9 +27,7 @@ public class EnemyManager : MonoBehaviour {
         Rigidbody2D rb    = g.GetComponent<Rigidbody2D>();
         EnemyStats es     = g.GetComponent<EnemyStats>();
         EnemyMovement em  = g.GetComponent<EnemyMovement>();
-        EnemyDamage ed    = g.GetComponent<EnemyDamage>();
-
-
+   
         if (col != null)
         {
             col.enabled = !col.enabled;
@@ -41,6 +39,11 @@ public class EnemyManager : MonoBehaviour {
         if (anim != null) anim.enabled = !anim.enabled;
         if (es   != null) es.enabled   = !es.enabled;
         if (em   != null) em.enabled   = !em.enabled;
-        if (ed   != null) ed.enabled   = !ed.enabled;
+
+        if (g.transform.GetChild(0) != null)
+        {
+            EnemyDamage ed = g.transform.GetChild(0).GetComponent<EnemyDamage>();
+            if (ed != null) ed.enabled = !ed.enabled;
+        }
     }
 }

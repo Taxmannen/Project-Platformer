@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
-
     public int damage;
     public float damageRate;
 
@@ -22,10 +19,13 @@ public class EnemyDamage : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") Debug.Log("aa");
-        if (other.tag == "Player" && timer <= damageRate)
+        if (other.tag == "Player")
         {
-            playerStats.RemoveHealth(damage);
+            if (timer <= 0)
+            {
+                playerStats.RemoveHealth(damage);
+                timer = damageRate;
+            }
         }
     }
 }
